@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phone Number Lookup · Accessibility Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="../styles/lookup.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Accessibility Library</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html#library">Library</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="portfolio.html" target="_blank" rel="noopener noreferrer">Portfolio<span class="sr-only"> (opens in a new tab)</span> ↗</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="section">
+    <div class="wrap">
+      <p><a href="../index.html#library">← Back to the Library</a></p>
+      <div class="head">
+        <h1>Phone Number Lookup</h1>
+        <p>Paste a phone number with its country code to see where it is from and how it should be written.</p>
+      </div>
+
+      <div class="lk">
+        <div>
+          <form id="lk-form" novalidate>
+            <label for="num">Phone number</label>
+            <input id="num" name="num" type="tel" autocomplete="off" inputmode="tel" aria-describedby="num-hint num-err" placeholder="+44 20 7946 0958">
+            <p class="hint" id="num-hint">Start with + and the country code. Spaces, dashes and brackets are fine.</p>
+            <p class="err" id="num-err" role="alert"></p>
+            <button class="btn" type="submit">Look up</button>
+          </form>
+
+          <p class="try-label" id="try-label">Or try an example:</p>
+          <ul class="try" aria-labelledby="try-label" id="examples"></ul>
+
+          <div class="result" id="result" aria-live="polite" tabindex="-1" hidden>
+            <h2>Result</h2>
+            <dl id="rows"></dl>
+            <button class="btn ghost" type="button" id="copy">Copy international format</button>
+            <p class="copied" id="copied" role="status"></p>
+          </div>
+        </div>
+
+        <aside class="panel" aria-labelledby="how-title">
+          <h2 id="how-title">Behind the scenes</h2>
+          <p>What happens when you press Look up.</p>
+          <ol class="steps">
+            <li>Spaces, dashes and brackets are removed.</li>
+            <li>The leading digits are matched against a table of country calling codes.</li>
+            <li>The remaining digits are checked against that country’s usual length.</li>
+          </ol>
+          <p class="note"><strong>Good to know:</strong> this runs in your browser using a small built-in table. It cannot tell who owns a number or which network it is on.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="yr">2026</span> Accessibility Library</p>
+    <ul>
+      <li><a href="index.html#library">Library</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../scripts/lookup.js" defer></script>
+</body>
+</html>

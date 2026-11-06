@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>USSD Service Simulator · Accessibility Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="../styles/ussd.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Accessibility Library</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html#library">Library</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="portfolio.html" target="_blank" rel="noopener noreferrer">Portfolio<span class="sr-only"> (opens in a new tab)</span> ↗</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="section">
+    <div class="wrap">
+      <p><a href="../index.html#library">← Back to the Library</a></p>
+      <div class="head">
+        <h1>USSD Service Simulator</h1>
+        <p>USSD works on any phone, with no data or app. Dial <strong>*123#</strong> below, then follow the menu. Demo PIN: <strong>1234</strong>.</p>
+      </div>
+
+      <div class="sim">
+        <div class="phone" role="group" aria-labelledby="phone-label">
+          <h2 id="phone-label" class="sr-only">Simulated phone</h2>
+          <div class="screen" id="screen" aria-live="polite" aria-atomic="true">Dial *123# to begin.</div>
+          <form id="ussd-form" autocomplete="off">
+            <label for="entry" id="entry-label">Dial a code</label>
+            <input id="entry" name="entry" inputmode="text" value="*123#" aria-describedby="hint">
+            <p class="hint" id="hint">Type your reply, then press Send.</p>
+            <div class="row">
+              <button class="btn" type="submit" id="send">Call</button>
+              <button class="btn ghost" type="button" id="cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="side">
+          <aside class="panel" aria-labelledby="bts-title">
+            <h2 id="bts-title">Behind the scenes</h2>
+            <p>Where you are in the session.</p>
+            <ol class="steps" id="steps">
+              <li>Dial the service code</li>
+              <li>Choose a menu option</li>
+              <li>Enter your details</li>
+              <li>Confirm and receive an SMS</li>
+            </ol>
+          </aside>
+          <div class="sms" id="sms" role="status" hidden></div>
+          <button class="btn ghost" type="button" id="restart" hidden>Start a new session</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="yr">2026</span> Accessibility Library</p>
+    <ul>
+      <li><a href="index.html#library">Library</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../scripts/ussd.js" defer></script>
+</body>
+</html>
