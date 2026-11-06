@@ -1,0 +1,17 @@
+.sim{display:grid;grid-template-columns:minmax(0,22rem) 1fr;gap:2.5rem;align-items:start}
+.phone{background:var(--text);border-radius:28px;padding:1.25rem;color:var(--bg)}
+.phone label{display:block;font-weight:700;margin:1rem 0 .35rem}
+.screen{background:var(--tint);color:var(--text);border-radius:10px;padding:1rem;min-height:12rem;white-space:pre-wrap;font:1rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.phone input{width:100%;font:inherit;font-size:1.1rem;padding:.75rem 1rem;border-radius:8px;border:2px solid var(--muted);background:var(--card);color:var(--text)}
+.phone input:disabled{opacity:.6}
+.hint{margin:.4rem 0 0;font-size:.95rem;color:#c9d1da}
+.row{display:flex;gap:.75rem;margin-top:1rem}
+.phone .btn{flex:1;background:var(--accent);color:var(--on-accent)}
+.phone .btn.ghost{background:transparent;color:var(--bg);border:2px solid var(--bg)}
+.phone :focus-visible{outline-color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.side{display:grid;gap:1.25rem;max-width:32rem}
+.sms{background:var(--card);border:1px solid var(--border);border-left:6px solid var(--primary);border-radius:8px;padding:1rem 1.2rem}
+.sms strong{display:block;margin-bottom:.25rem}
+@media (max-width:820px){.sim{grid-template-columns:1fr}.phone{max-width:24rem}}
